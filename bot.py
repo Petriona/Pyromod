@@ -14,10 +14,10 @@ bot = Client(
       session_string=SESSION
 )
 
-# @bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
-# async def start(bot, message):
+@bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
+async def start(bot, message):
   
- # await message.edit('Hello')
+ await message.edit('Hello')
       
 @bot.on_message(filters.me & filters.document & filters.chat(-1001711933553))
 async def start(bot, message):
