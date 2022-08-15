@@ -10,4 +10,4 @@ SESSION = os.environ.get("SESSION")
 bot = Client(":memory:",
       api_id=API_ID,
       api_hash=API_HASH,
-      session_string=SESSION)
+      session_name=SESSION)
