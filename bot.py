@@ -7,7 +7,8 @@ API_HASH = os.environ.get("API_HASH")
 SESSION = os.environ.get("SESSION")
 
 
-bot = Client(":memory:",
+bot = Client(
       api_id=API_ID,
       api_hash=API_HASH,
-      session_name=SESSION)
+      session_name=SESSION
+)
