@@ -1,5 +1,5 @@
 import os
-from pyromod import listen
+# from pyromod import listen
 from pyrogram import Client
 
 NAME = "Pyromod"
