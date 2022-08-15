@@ -13,7 +13,7 @@ from pyrogram import Client, filters
 async def start(bot, message):
   
   api = await bot.ask(message.chat.id, "How are you bruh?")
-  await message.edit(api)
+  await message.edit(api.text)
   
 if __name__ == "__main__":
     bot.run()
