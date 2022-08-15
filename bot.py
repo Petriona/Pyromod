@@ -29,5 +29,5 @@ async def start(bot, message):
  await message.delete()
  await message.reply(c.text)
 
-# if __name__ == "__main__":    
-bot.run()
+if __name__ == "__main__":    
+ bot.run()
