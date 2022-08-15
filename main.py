@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 #   await hemlo.edit(api.text)
 
 @Client.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
-async def start(client: Client, message: Message):
+async def start(bot, message):
     await message.edit("Hello")
   
 if __name__ == "__main__":
