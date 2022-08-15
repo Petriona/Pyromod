@@ -14,10 +14,10 @@ bot = Client(
       session_string=SESSION
 )
 
-@Client.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
-async def start(bot, message):
+#@Client.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
+#async def start(bot, message):
   
-  await message.edit('Hello')
+#  await message.edit('Hello')
   #a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
  # await a.reply("/dd")
  # b = bot.get_chat_history("HagadmansaBot", 1)
@@ -26,4 +26,4 @@ async def start(bot, message):
  # await message.reply(b.text)
 
 # if __name__ == "__main__":    
-bot.run()
+#bot.run()
