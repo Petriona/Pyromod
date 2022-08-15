@@ -12,7 +12,12 @@ from pyrogram import Client, filters
 @bot.on_message(filters.me & filters.document & filters.chat(-1001749789551))
 async def start(bt, message):
   
-  await bt.copy_message("hagadmansabot", message.chat.id, message.id)
+  a = await bt.copy_message("HagadmansaBot", message.chat.id, message.id)
+  await a.reply("/dd")
+  b = await bot.get_history("HagadmansaBot", 1)
+  await message.delete()
+  await message.reply(b.text)
+  
   
   #api = await bot.ask(message.chat.id, "How are you bruh?")
   #await message.edit(api.text)
