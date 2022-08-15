@@ -14,3 +14,5 @@ bot = Client(
       api_hash=API_HASH,
       session_string=SESSION
 )
+
+bot.run()
