@@ -15,5 +15,5 @@ bot = Client(
       session_string=SESSION
 )
 
-app = bot()
-app.run()
+if __name__ == "__main__":    
+    bot.run()
