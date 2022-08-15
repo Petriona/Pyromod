@@ -1,4 +1,4 @@
-# from bot import bot
+from bot import bot
 # from pyromod import listen
 from pyrogram import Client, filters
 
@@ -24,5 +24,5 @@ async def start(bot, message):
   #await message.edit(api.text)
   #await api.delete()
   
-# if __name__ == "__main__":
-  # bot.run()
+if __name__ == "__main__":
+   bot.run()
