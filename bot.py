@@ -15,4 +15,5 @@ bot = Client(
       session_string=SESSION
 )
 
-bot.run()
+app = bot()
+app.run()
