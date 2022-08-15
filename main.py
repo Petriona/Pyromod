@@ -1,5 +1,5 @@
-from bot import bot
-from pyromod import listen
+# from bot import bot
+# from pyromod import listen
 from pyrogram import Client, filters
 
 # @bot.on_message(filters.private & filters.command("start"))
@@ -9,12 +9,12 @@ from pyrogram import Client, filters
 #   api = await bot.ask(msg.chat.id, "How are you bruh?")
 #   await hemlo.edit(api.text)
 
-@bot.on_message(filters.me & filters.document & filters.chat(-1001749789551))
-async def start(bt, message):
+@Client.on_message(filters.me & filters.document & filters.chat(-1001749789551))
+async def start(bot, message):
   
-  a = await bt.copy_message("HagadmansaBot", message.chat.id, message.id)
+  a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
   await a.reply("/dd")
-  b = bt.get_chat_history("HagadmansaBot", 1)
+  b = bot.get_chat_history("HagadmansaBot", 1)
   print(b)
   await message.delete()
   await message.reply(b.text)
@@ -24,5 +24,5 @@ async def start(bt, message):
   #await message.edit(api.text)
   #await api.delete()
   
-if __name__ == "__main__":
-    bot.run()
+# if __name__ == "__main__":
+  # bot.run()
