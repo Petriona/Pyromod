@@ -14,6 +14,7 @@ async def start(bot, message):
   
   api = await bot.ask(message.chat.id, "How are you bruh?")
   await message.edit(api.text)
+  await api.delete()
   
 if __name__ == "__main__":
     bot.run()
