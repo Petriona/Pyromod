@@ -19,13 +19,13 @@ async def start(bot, message):
   
  await message.edit('Hello')
       
-@bot.on_message(filters.me & filters.document & filters.chat(-1001711933553))
+@bot.on_message(filters.me & filters.document & filters.chat(-1001749789551))
 async def start(bot, message):
   
  a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
  await a.reply("/dd")
  b = bot.get_chat_history("HagadmansaBot", 1)
- c = bot.get_messages("HagadmansaBot", b)
+ await c = bot.get_messages("HagadmansaBot", b)
  await message.delete()
  await message.reply(c.text)
 
