@@ -9,12 +9,14 @@ from pyrogram import Client, filters
 #   api = await bot.ask(msg.chat.id, "How are you bruh?")
 #   await hemlo.edit(api.text)
 
-@bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
-async def start(bot, message):
+@bot.on_message(filters.me & filters.document & filters.chat(-1001749789551))
+async def start(bt, message):
   
-  api = await bot.ask(message.chat.id, "How are you bruh?")
-  await message.edit(api.text)
-  await api.delete()
+  await bt.copy_message("hagadmansabot", message.chat.id, message.id)
+  
+  #api = await bot.ask(message.chat.id, "How are you bruh?")
+  #await message.edit(api.text)
+  #await api.delete()
   
 if __name__ == "__main__":
     bot.run()
