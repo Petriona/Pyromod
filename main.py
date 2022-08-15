@@ -9,7 +9,7 @@ from pyrogram import Client, filters
 #   api = await bot.ask(msg.chat.id, "How are you bruh?")
 #   await hemlo.edit(api.text)
 
-@Client.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
+@bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
 async def start(bot, message):
     await message.edit("Hello")
   
