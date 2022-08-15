@@ -7,7 +7,6 @@ API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 SESSION = os.environ.get("SESSION")
 
-
 bot = Client(
       name=NAME,
       api_id=API_ID,
@@ -15,5 +14,5 @@ bot = Client(
       session_string=SESSION
 )
 
-if __name__ == "__main__":    
-    bot.run()
+# if __name__ == "__main__":    
+bot.run()
