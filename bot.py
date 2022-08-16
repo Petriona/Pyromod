@@ -3,6 +3,7 @@ import io
 import sys
 import asyncio
 import traceback
+from pyrogram import enums
 # from pyromod import listen
 from pyrogram import Client, filters
 
@@ -19,6 +20,10 @@ bot = Client(
 )
 
 data = []
+
+def listToString(s):
+    str1 = " "
+    return (str1.join(s))
 
 @bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
 async def start(bot, message):
@@ -42,7 +47,8 @@ async def movie(bot, message):
     if len(message.command) == 1:
         await message.edit('Give me movie name to search')
             
-    query = message.command[1:]
+    q = message.command[1:]
+    query = listToString(q)
     print(query)
    
     async for x in bot.search_global(query=query, filter=enums.MessagesFilter.DOCUMENT, limit=1):
