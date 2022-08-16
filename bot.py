@@ -1,4 +1,5 @@
 import os
+import asyncio
 # from pyromod import listen
 from pyrogram import Client, filters
 
@@ -24,8 +25,8 @@ async def start(bot, message):
   
  a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
  await a.reply("/dd")
+ await asyncio.sleep(1)
  async for b in bot.get_chat_history("HagadmansaBot", 1):
-     print(b.text)
  await message.delete()
  await message.reply(b.text)
 
