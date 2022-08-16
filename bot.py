@@ -48,7 +48,7 @@ async def eval(bot, message):
     stdout, stderr, exc = None, None, None
 
     try:
-        await aexec(cmd, client, message)
+        await aexec(cmd, bot, message)
     except Exception:
         exc = traceback.format_exc()
 
