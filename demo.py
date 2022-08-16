@@ -2,6 +2,9 @@ import asyncio
 from pyrogram import enums
 
 async for x in message._client.search_global(query='morbius 2022 hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
+    if len(x) == 0:
+        return await message.edit('No Files Found')
+    
     try:
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
           a = await message._client.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
