@@ -43,6 +43,7 @@ async def movie(bot, message):
         await message.edit('Give me movie name to search')
             
     query = message.command[1:]
+    print(query)
    
     async for x in bot.search_global(query=query, filter=enums.MessagesFilter.DOCUMENT, limit=1):
     
@@ -89,8 +90,8 @@ async def movie(bot, message):
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
             print(ddd.text)  
     
-if not data:
-    return await message.edit('No Files Found')
+    if not data:
+        return await message.edit('No Files Found')
     
 
 @bot.on_message(filters.me & filters.command(["eval"], [".", "!", "/"]))
