@@ -69,35 +69,38 @@ async def movie(bot, message):
           async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
             await message.edit('Successfully Generated File Store Link')
        elif (x.document.file_size < 1610612736) and (x.document.file_size > 1073741824):
+          await message.edit('Found a file greater then 1 GB and less then 1.5 GB.')
           b = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await b.reply('/dd')
           await asyncio.sleep(2)
           async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-            print(bb.text)
+            await message.edit('Successfully Generated File Stream Link')
           await b.reply('/fs')
           await asyncio.sleep(2)
           async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-            print(bbb.text) 
+            await message.edit('Successfully Generated File Store Link')
        elif (x.document.file_size < 1073741824) and (x.document.file_size > 536870912):
+          await message.edit('Found a file greater then 0.5 GB and less then 1 GB.')
           c = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await c.reply('/dd')
           await asyncio.sleep(2)
           async for cc in bot.get_chat_history("@HagadmansaBot", 1):
-            print(cc.text)
+            await message.edit('Successfully Generated File Stream Link')
           await c.reply('/fs')
           await asyncio.sleep(2)
           async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
-            print(ccc.text)
+            await message.edit('Successfully Generated File Store Link')
        elif (x.document.file_size < 536870912):
+          await message.edit('Found a file less then 0.5 GB.')
           d = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await d.reply('/dd')
           await asyncio.sleep(2)
           async for dd in bot.get_chat_history("@HagadmansaBot", 1):
-            print(dd.text)
+            await message.edit('Successfully Generated File Stream Link')
           await d.reply('/fs')
           await asyncio.sleep(2)
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
-            print(ddd.text)  
+            await message.edit('Successfully Generated File Store Link')
             
     await message.edit('Done, published on website.')
 
