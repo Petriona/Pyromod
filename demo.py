@@ -5,12 +5,7 @@ data = []
 
 async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw ', filter=enums.MessagesFilter.DOCUMENT, limit=1):
     
-    data.append(x)
-    
-    if not data:
-        return await message.edit('No Files Found')
-    
-    else:
+       data.append(x)
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
           a = await message._client.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await a.reply('/dd')
@@ -51,7 +46,8 @@ async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw '
           await d.reply('/fs')
           await asyncio.sleep(2)
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
-            print(ddd.text)
-       else:
-          await message.edit('No file found')
+            print(ddd.text)  
+    
+if not data:
+    return await message.edit('No Files Found')
     
