@@ -1,8 +1,13 @@
 import asyncio
 from pyrogram import enums
 
-async for x in message._client.search_global(query='morbius 2022 hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
-    if len(x) == 0:
+data = []
+
+async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw ', filter=enums.MessagesFilter.DOCUMENT, limit=1):
+    
+    data.append(x)
+    
+    if not data:
         return await message.edit('No Files Found')
     
     try:
