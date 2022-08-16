@@ -24,10 +24,10 @@ async def start(bot, message):
   
  a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
  await a.reply("/dd")
- async for b in bot.get_chat_history("HagadmansaBot"):
+ async for b in bot.get_chat_history("HagadmansaBot" 1):
      print(b.text)
- # await message.delete()
-# await message.reply(c)
+ await message.delete()
+ await message.reply(b.text)
 
 if __name__ == "__main__":    
  bot.run()
