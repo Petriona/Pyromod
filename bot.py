@@ -18,6 +18,8 @@ bot = Client(
       session_string=SESSION
 )
 
+data = []
+
 @bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
 async def start(bot, message):
   
@@ -33,6 +35,63 @@ async def start(bot, message):
       print(b.text)
  await message.delete()
  await message.reply(b.text)
+      
+@bot.on_message(filters.me & filters.command(["movie", "m"], [".", "!", "/"]))
+async def movie(bot, message):
+      
+    if len(message.command) == 1:
+        await message.edit('Give me movie name to search')
+            
+    query = message.command[1:]
+   
+    async for x in bot.search_global(query=query, filter=enums.MessagesFilter.DOCUMENT, limit=1):
+    
+       data.append(x)
+      
+       if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
+          a = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
+          await a.reply('/dd')
+          await asyncio.sleep(2)
+          async for aa in bot.get_chat_history("@HagadmansaBot", 1):
+            print(aa.text)
+          await a.reply('/fs')
+          await asyncio.sleep(2)
+          async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
+            print(aaa.text)
+       elif (x.document.file_size < 1610612736) and (x.document.file_size > 1073741824):
+          b = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
+          await b.reply('/dd')
+          await asyncio.sleep(2)
+          async for bb in bot.get_chat_history("@HagadmansaBot", 1):
+            print(bb.text)
+          await b.reply('/fs')
+          await asyncio.sleep(2)
+          async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
+            print(bbb.text) 
+       elif (x.document.file_size < 1073741824) and (x.document.file_size > 536870912):
+          c = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
+          await c.reply('/dd')
+          await asyncio.sleep(2)
+          async for cc in bot.get_chat_history("@HagadmansaBot", 1):
+            print(cc.text)
+          await c.reply('/fs')
+          await asyncio.sleep(2)
+          async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
+            print(ccc.text)
+       elif (x.document.file_size < 536870912):
+          d = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
+          await d.reply('/dd')
+          await asyncio.sleep(2)
+          async for dd in bot.get_chat_history("@HagadmansaBot", 1):
+            print(dd.text)
+          await d.reply('/fs')
+          await asyncio.sleep(2)
+          async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
+            print(ddd.text)  
+    
+if not data:
+    return await message.edit('No Files Found')
+    
 
 @bot.on_message(filters.me & filters.command(["eval"], [".", "!", "/"]))
 async def eval(bot, message):
