@@ -3,7 +3,7 @@ from pyrogram import enums
 
 data = []
 
-async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw ', filter=enums.MessagesFilter.DOCUMENT, limit=1):
+async for x in message._client.search_global(query='hera pheri hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
     
        data.append(x)
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
