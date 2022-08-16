@@ -25,7 +25,7 @@ async def start(bot, message):
   
  a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
  await a.reply("/dd")
- await asyncio.sleep(1)
+ await asyncio.sleep(2)
  async for b in bot.get_chat_history("HagadmansaBot", 1):
       print(b.text)
  await message.delete()
