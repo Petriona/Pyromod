@@ -10,7 +10,7 @@ async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw '
     if not data:
         return await message.edit('No Files Found')
     
-    try:
+    else:
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
           a = await message._client.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await a.reply('/dd')
@@ -54,5 +54,4 @@ async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw '
             print(ddd.text)
        else:
           await message.edit('No file found')
-    except Exception as e:
-       await message.edit(e)
+    
