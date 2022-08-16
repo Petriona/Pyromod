@@ -30,7 +30,7 @@ async for x in message._client.search_global(query='ndie cjecne cjexn xwjnwxjw '
           await b.reply('/fs')
           await asyncio.sleep(2)
           async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-            print(bbb.text)
+            print(bbb.text) 
           await b.reply('/dd')
        elif (x.document.file_size < 1073741824) and (x.document.file_size > 536870912):
           c = await message._client.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
