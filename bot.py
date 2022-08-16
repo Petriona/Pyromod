@@ -45,26 +45,29 @@ async def start(bot, message):
 async def movie(bot, message):
       
     if len(message.command) == 1:
-        await message.edit('Give me movie name to search')
+        return await message.edit('Give me movie name to search.')
             
     q = message.command[1:]
     query = listToString(q)
     print(query)
-   
+    
+    await message.edit('Finding Files...')
+
     async for x in bot.search_global(query=query, filter=enums.MessagesFilter.DOCUMENT, limit=1):
     
        data.append(x)
       
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
+          await message.edit('Found a file greater then 1.5 GB and less then 2 GB.')
           a = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await a.reply('/dd')
           await asyncio.sleep(2)
           async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-            print(aa.text)
+            await message.edit('Successfully Generated File Stream Link')
           await a.reply('/fs')
           await asyncio.sleep(2)
           async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-            print(aaa.text)
+            await message.edit('Successfully Generated File Store Link')
        elif (x.document.file_size < 1610612736) and (x.document.file_size > 1073741824):
           b = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await b.reply('/dd')
@@ -95,7 +98,9 @@ async def movie(bot, message):
           await asyncio.sleep(2)
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
             print(ddd.text)  
-    
+            
+    await message.edit('Done, published on website.')
+
     if not data:
         return await message.edit('No Files Found')
     
