@@ -19,8 +19,6 @@ bot = Client(
       session_string=SESSION
 )
 
-data = []
-
 def listToString(s):
     str1 = " "
     return (str1.join(s))
@@ -49,11 +47,13 @@ async def movie(bot, message):
             
      q = message.command[1:]
      query = listToString(q)
+     data = []
     
      await message.edit('Finding Files...')
 
      async for x in bot.search_global(query=query + 'Hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
         data.append(x)
+        print(data)
      if not data:
        return await message.edit(f'No Files Found named {query}.')
      else:
