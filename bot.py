@@ -47,11 +47,13 @@ async def movie(bot, message):
             
      q = message.command[1:]
      query = listToString(q)
+     srch = query + "Hindi"
+     print(srch)
      data = []
     
      await message.edit('Finding Files...')
 
-     async for x in bot.search_global(query=query + 'Hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
+     async for x in bot.search_global(query=srch + 'Hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
         data.append(x)
         print(data)
      if not data:
