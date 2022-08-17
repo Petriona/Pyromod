@@ -52,7 +52,7 @@ async def movie(bot, message):
     
      await message.edit('Finding Files...')
 
-     async for x in bot.search_global(query=query + 'Hindi'), filter=enums.MessagesFilter.DOCUMENT, limit=1):
+     async for x in bot.search_global(query=query + 'Hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
         data.append(x)
      if not data:
        return await message.edit(f'No Files Found named {query}.')
