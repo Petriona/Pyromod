@@ -47,17 +47,17 @@ async def movie(bot, message):
             
      q = message.command[1:]
      query = listToString(q)
-     srch = query + "Hindi"
+     srch = query + " " + "Hindi"
      print(srch)
      data = []
     
      await message.edit('Finding Files...')
 
-     async for x in bot.search_global(query=srch + 'Hindi', filter=enums.MessagesFilter.DOCUMENT, limit=1):
+     async for x in bot.search_global(query=query + " " + "Hindi", filter=enums.MessagesFilter.DOCUMENT, limit=1):
         data.append(x)
         print(data)
      if not data:
-       return await message.edit(f'No Files Found named {query}.')
+       return await message.edit(f'No Files Found named `{query}`.')
      else:
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
           await message.edit('Found a file greater then 1.5 GB and less then 2 GB.')
