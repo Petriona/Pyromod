@@ -49,7 +49,7 @@ async def movie(bot, message):
      query = listToString(q)
      data = []
     
-     await message.edit('⏳ Running first process~')
+     await message.edit('⏳ Running first process...')
  
      # Process of finding 1st file.
      async for x in bot.search_global(query=query + " " + "Hindi", filter=enums.MessagesFilter.DOCUMENT, limit=1):
@@ -57,59 +57,59 @@ async def movie(bot, message):
      if not data:
        return await message.edit(f'No Files Found named `{query}`.')
      else:
-       if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):      
-          await message.edit('⏳ Running first process~\n- File Found.')
-          a = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
+       if (x.document.file_size < 1073741824) and (x.document.file_size > 536870912):      
+          await message.edit('⏳ Running first process...\n- File Found. (0.5 GB to 1 GB)')
+          a = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id, caption=x.document.file_name)
           await a.reply('/dd')
           await asyncio.sleep(2)
           async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ Running first process~\n- File Found.\n- File Stream link generated.')
+            await message.edit('⏳ Running first process~\n- File Found. (0.5 GB to 1 GB)\n- File Stream link generated.')
           await a.reply('/fs')
           await asyncio.sleep(2)
           async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ Running first process~\n- File Found.\n- File Stream link generated.\n- File Store link generated.')
-          await asyncio.sleep(1)
-          await message.edit('✅ First Process Comleted.')
-            
-       elif (x.document.file_size < 1610612736) and (x.document.file_size > 1073741824):
-          await message.edit('⏳ Running first process~\n- File Found.')
-          b = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
-          await b.reply('/dd')
-          await asyncio.sleep(2)
-          async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ Running first process~\n- File Found.\n- File Stream link generated.')
-          await b.reply('/fs')
-          await asyncio.sleep(2)
-          async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ Running first process~\n- File Found.\n- File Stream link generated.\n- File Store link generated.')
-          await asyncio.sleep(1)
-          await message.edit('✅ First Process Comleted.')
-            
-       elif (x.document.file_size < 1073741824) and (x.document.file_size > 536870912):
-          await message.edit('⏳ Running first process~\n- File Found.')
-          c = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
-          await c.reply('/dd')
-          await asyncio.sleep(2)
-          async for cc in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ Running first process~\n- File Found.\n- File Stream link generated.')
-          await c.reply('/fs')
-          await asyncio.sleep(2)
-          async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ Running first process~\n- File Found.\n- File Stream link generated.\n- File Store link generated.')
+            await message.edit('⏳ Running first process~\n- File Found. (0.5 GB to 1 GB)\n- File Stream link generated.\n- File Store link generated.')
           await asyncio.sleep(1)
           await message.edit('✅ First Process Comleted.')
             
        elif (x.document.file_size < 536870912):
-          await message.edit('⏳ First Process Started.\n- File Found.')
-          d = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
+          await message.edit('⏳ Running first process~\n- File Found. (less then 0.5 GB)')
+          b = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id, caption=x.document.file_name)
+          await b.reply('/dd')
+          await asyncio.sleep(2)
+          async for bb in bot.get_chat_history("@HagadmansaBot", 1):
+            await message.edit('⏳ Running first process~\n- File Found. (less then 0.5 GB)\n- File Stream link generated.')
+          await b.reply('/fs')
+          await asyncio.sleep(2)
+          async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
+            await message.edit('⏳ Running first process~\n- File Found. (less then 0.5 GB)\n- File Stream link generated.\n- File Store link generated.')
+          await asyncio.sleep(1)
+          await message.edit('✅ First Process Comleted.')
+            
+       elif (x.document.file_size < 1610612736) and (x.document.file_size > 1073741824):
+          await message.edit('⏳ Running first process~\n- File Found. (1 GB to 1.5 GB)')
+          c = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id, caption=x.document.file_name)
+          await c.reply('/dd')
+          await asyncio.sleep(2)
+          async for cc in bot.get_chat_history("@HagadmansaBot", 1):
+            await message.edit('⏳ Running first process~\n- File Found. (1 GB to 1.5 GB)\n- File Stream link generated.')
+          await c.reply('/fs')
+          await asyncio.sleep(2)
+          async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
+            await message.edit('⏳ Running first process~\n- File Found. (1 GB to 1.5 GB)\n- File Stream link generated.\n- File Store link generated.')
+          await asyncio.sleep(1)
+          await message.edit('✅ First Process Comleted.')
+            
+       elif (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
+          await message.edit('⏳ First Process Started.\n- File Found. (1.5 GB to 2 GB)')
+          d = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id, caption=x.document.file_name)
           await d.reply('/dd')
           await asyncio.sleep(2)
           async for dd in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ First Process Started.\n- File Found.\n- File Stream link generated.')
+            await message.edit('⏳ First Process Started.\n- File Found. (1.5 GB to 2 GB)\n- File Stream link generated.')
           await d.reply('/fs')
           await asyncio.sleep(2)
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('⏳ First Process Started.\n- File Found.\n- File Stream link generated.\n- File Store link generated.')
+            await message.edit('⏳ First Process Started.\n- File Found. (1.5 GB to 2 GB)\n- File Stream link generated.\n- File Store link generated.')
           await asyncio.sleep(1)
           await message.edit('✅ First Process Comleted.')
             
