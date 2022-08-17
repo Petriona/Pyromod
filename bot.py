@@ -47,29 +47,28 @@ async def movie(bot, message):
             
      q = message.command[1:]
      query = listToString(q)
-     srch = query + " " + "Hindi"
-     print(srch)
      data = []
     
-     await message.edit('Finding Files...')
-
+     await message.edit('⏳ First Process Started.')
+ 
+     # Process of finding 1st file.
      async for x in bot.search_global(query=query + " " + "Hindi", filter=enums.MessagesFilter.DOCUMENT, limit=1):
         data.append(x)
-        print(data)
      if not data:
        return await message.edit(f'No Files Found named `{query}`.')
      else:
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
-          await message.edit('Found a file greater then 1.5 GB and less then 2 GB.')
+          await message.edit('⏳ First Process Started.\n- File Found.')
           a = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
           await a.reply('/dd')
           await asyncio.sleep(2)
           async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('Successfully Generated File Stream Link')
+            await message.edit('⏳ First Process Started.\n- File Found.\n- File Stream link generated.')
           await a.reply('/fs')
           await asyncio.sleep(2)
           async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-            await message.edit('Successfully Generated File Store Link')
+            await message.edit('⏳ First Process Started.\n- File Found.\n- File Stream link generated.\n- File Store link generated.')
+          await message.edit('✅ First Process Comleted.')
        elif (x.document.file_size < 1610612736) and (x.document.file_size > 1073741824):
           await message.edit('Found a file greater then 1 GB and less then 1.5 GB.')
           b = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
@@ -104,7 +103,7 @@ async def movie(bot, message):
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
             await message.edit('Successfully Generated File Store Link')
             
-     await message.edit('Done, published on website.')
+     # await message.edit('Done, published on website.')
 
 @bot.on_message(filters.me & filters.command(["eval"], [".", "!", "/"]))
 async def eval(bot, message):
