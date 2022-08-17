@@ -44,19 +44,19 @@ async def start(bot, message):
 @bot.on_message(filters.me & filters.command(["movie", "m"], [".", "!", "/"]))
 async def movie(bot, message):
       
-    if len(message.command) == 1:
-        return await message.edit('Give me movie name to search.')
+     if len(message.command) == 1:
+         return await message.edit('Give me movie name to search.')
             
-    q = message.command[1:]
-    query = listToString(q)
-    print(query)
+     q = message.command[1:]
+     query = listToString(q)
     
-    await message.edit('Finding Files...')
+     await message.edit('Finding Files...')
 
-    async for x in bot.search_global(query=query, filter=enums.MessagesFilter.DOCUMENT, limit=1):
-    
-       data.append(x)
-      
+     async for x in bot.search_global(query=query + 'Hindi'), filter=enums.MessagesFilter.DOCUMENT, limit=1):
+        data.append(x)
+     if not data:
+       return await message.edit(f'No Files Found named {query}.')
+     else:
        if (x.document.file_size < 2147483648) and (x.document.file_size > 1610612736):
           await message.edit('Found a file greater then 1.5 GB and less then 2 GB.')
           a = await bot.send_cached_media(chat_id="@HagadmansaBot", file_id=x.document.file_id)
@@ -103,10 +103,6 @@ async def movie(bot, message):
             await message.edit('Successfully Generated File Store Link')
             
     await message.edit('Done, published on website.')
-
-    if not data:
-        return await message.edit('No Files Found')
-    
 
 @bot.on_message(filters.me & filters.command(["eval"], [".", "!", "/"]))
 async def eval(bot, message):
