@@ -143,15 +143,21 @@ async def movie_ul(bot, message):
         try:
             ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1073741824])][0]
             a = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
-            print(a)
+            await a.edit(a.document.file_name)
+            size = round(((a.document.file_size)/1024)/1024)
+            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)')
             await a.reply('/dd')
-            await asyncio.sleep(2)
+            await asyncio.sleep(1)
             async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-                print(aa.text)
+                await bot.send_message(chat_id=-1001541636745, text=aa.text)
+                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.')
             await a.reply('/fs')
-            await asyncio.sleep(2)
+            await asyncio.sleep(0.5)
             async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-                print(aaa.text)
+                await bot.send_message(chat_id=-1001541636745, text=aaa.text)
+                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
+            await asyncio.sleep(1)
+            await message.edit('✅ First Process Comleted.')
         except:
             try:    
                 ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1610612736])][0]
