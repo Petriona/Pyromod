@@ -155,7 +155,7 @@ async def movie_ul(bot, message):
             await asyncio.sleep(0.5)
             async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001541636745, text=aaa.text)
-            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
+            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
             await asyncio.sleep(1)
             await message.edit('✅ First Process Comleted.\n⏳ Running second process...')
         except:
@@ -174,7 +174,7 @@ async def movie_ul(bot, message):
                 await asyncio.sleep(0.5)
                 async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
                     await bot.send_message(chat_id=-1001541636745, text=bbb.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
+                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
                 await asyncio.sleep(1)
                 await message.edit('✅ First Process Comleted.\n⏳ Running second process...')
             except: # Trying to find a file less then 2 GB and greator then 1.5 GB.
@@ -192,7 +192,7 @@ async def movie_ul(bot, message):
                 await asyncio.sleep(0.5)
                 async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
                     await bot.send_message(chat_id=-1001541636745, text=ccc.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
+                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
                 await asyncio.sleep(1)
                 await message.edit('✅ First Process Comleted.\n⏳ Running second process...')
             
@@ -210,7 +210,7 @@ async def movie_ul(bot, message):
     await asyncio.sleep(0.5)
     async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
         await bot.send_message(chat_id=-1001541636745, text=ddd.text)
-    await message.edit(f'✅ First Process Comleted.\n⏳ Running second process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
+    await message.edit(f'✅ First Process Comleted.\n⏳ Running second process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
     await asyncio.sleep(1)
     await message.edit('Successfully completed all process.')
        
