@@ -147,7 +147,7 @@ async def movie_ul(bot, message):
             size = round(((a.document.file_size)/1024)/1024)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
             await a.reply('/dd')
-            await asyncio.sleep(1)
+            await asyncio.sleep(1.5)
             async for aa in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001749789551, text=aa.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
@@ -166,7 +166,7 @@ async def movie_ul(bot, message):
             size = round(((b.document.file_size)/1024)/1024)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
             await b.reply('/dd')
-            await asyncio.sleep(1)
+            await asyncio.sleep(1.5)
             async for bb in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001749789551, text=bb.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
@@ -184,7 +184,7 @@ async def movie_ul(bot, message):
             size = round(((c.document.file_size)/1024)/1024)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
             await c.reply('/dd')
-            await asyncio.sleep(1)
+            await asyncio.sleep(1.5)
             async for cc in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001749789551, text=cc.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
@@ -202,7 +202,7 @@ async def movie_ul(bot, message):
     size = round(((d.document.file_size)/1024)/1024)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)')
     await d.reply('/dd')
-    await asyncio.sleep(1)
+    await asyncio.sleep(1.5)
     async for dd in bot.get_chat_history("@HagadmansaBot", 1):
         await bot.send_message(chat_id=-1001749789551, text=dd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
