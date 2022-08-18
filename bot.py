@@ -165,15 +165,15 @@ async def movie_ul(bot, message):
                     print(bbb.text)
             except:
                 ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
-                b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
-                await b.reply('/dd')
+                c = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
+                await c.reply('/dd')
                 await asyncio.sleep(2)
-                async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-                    print(bb.text)
-                await b.reply('/fs')
+                async for cc in bot.get_chat_history("@HagadmansaBot", 1):
+                    print(cc.text)
+                await c.reply('/fs')
                 await asyncio.sleep(2)
-                async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-                    print(bbb.text)
+                async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
+                    print(ccc.text)
 @bot.on_message(filters.me & filters.command(["eval"], [".", "!", "/"]))
 async def eval(bot, message):
       
