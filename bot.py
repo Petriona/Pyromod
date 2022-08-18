@@ -39,7 +39,7 @@ async def start(bot, message):
  await message.delete()
  await message.reply(b.text)
       
-@bot.on_message(filters.me & filters.command(["movie", "m"], [".", "!", "/"]) & filters.user([1250003833, 5040662195]))
+@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]) & filters.user([1250003833, 5040662195]))
 async def movie(bot, message):
       
      if len(message.command) == 1:
@@ -116,7 +116,7 @@ async def movie(bot, message):
             
      # await message.edit('Done, published on website.')
 
-@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]))
+@bot.on_message(filters.me & filters.command(["m", "movie"], [".", "!", "/"]))
 async def movie_ul(bot, message):
  
     if len(message.command) == 1:
@@ -222,7 +222,7 @@ async def movie_ul(bot, message):
     await message.edit(f'✅ First Step Completed.\n✅ First Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
     await bot.send_message(chat_id=-1001749789551, text=f'/imdb {query}')
     await asyncio.sleep(3)
-    await message.edit(f'**Website Link:** {web}\n**Telegram Link:** {msg}')
+    await message.edit(f'**Movie:** {query}\n**Website Link:** {web}')
     
        
 @bot.on_message(filters.me & filters.command(["eval", "e"], [".", "!", "/"]))
