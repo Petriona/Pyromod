@@ -160,41 +160,23 @@ async def movie_ul(bot, message):
             await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
         except:
             # Trying to find a file less then 1.5 GB and greator then 1 GB.
-            pk = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1610612736])][0]
-            b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=pk)
-            await b.edit(b.document.file_name)
-            size = round(((b.document.file_size)/1024)/1024)
-            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
-            await b.reply('/dd')
-            await asyncio.sleep(1.5)
-            async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001749789551, text=bb.text)
-            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
-            await b.reply('/fs')
-            await asyncio.sleep(0.5)
-            async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001749789551, text=bbb.text)
-            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
-            await asyncio.sleep(1)
-            await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
-        finally: # Trying to find a file less then 2 GB and greator then 1.5 GB.
-            ko = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
-            c = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ko)
-            await c.edit(c.document.file_name)
-            size = round(((c.document.file_size)/1024)/1024)
-            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
-            await c.reply('/dd')
-            await asyncio.sleep(1.5)
-            async for cc in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001749789551, text=cc.text)
-            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
-            await c.reply('/fs')
-            await asyncio.sleep(0.5)
-            async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001749789551, text=ccc.text)
-            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
-            await asyncio.sleep(1)
-            await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
+              pk = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1610612736])][0]
+              b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=pk)
+              await b.edit(b.document.file_name)
+              size = round(((b.document.file_size)/1024)/1024)
+              await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
+              await b.reply('/dd')
+              await asyncio.sleep(1.5)
+              async for bb in bot.get_chat_history("@HagadmansaBot", 1):
+                  await bot.send_message(chat_id=-1001749789551, text=bb.text)
+              await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
+              await b.reply('/fs')
+              await asyncio.sleep(0.5)
+              async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
+                  await bot.send_message(chat_id=-1001749789551, text=bbb.text)
+              await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
+              await asyncio.sleep(0.5)
+              await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
             
     kk = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
     d = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=kk)
