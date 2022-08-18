@@ -145,74 +145,93 @@ async def movie_ul(bot, message):
             a = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
             await a.edit(a.document.file_name)
             size = round(((a.document.file_size)/1024)/1024)
-            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)')
+            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
             await a.reply('/dd')
             await asyncio.sleep(1.5)
             async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001541636745, text=aa.text)
-            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.')
+                await bot.send_message(chat_id=-1001749789551, text=aa.text)
+            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
             await a.reply('/fs')
             await asyncio.sleep(0.5)
             async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001541636745, text=aaa.text)
-            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
+                await bot.send_message(chat_id=-1001749789551, text=aaa.text)
+            await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
             await asyncio.sleep(1)
-            await message.edit('✅ First Process Comleted.\n⏳ Running second process...')
+            await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
         except:
             try: # Trying to find a file less then 1.5 GB and greator then 1 GB.
                 pk = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1610612736])][0]
                 b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=pk)
                 await b.edit(b.document.file_name)
                 size = round(((b.document.file_size)/1024)/1024)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)')
+                await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
                 await b.reply('/dd')
                 await asyncio.sleep(1.5)
                 async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-                    await bot.send_message(chat_id=-1001541636745, text=bb.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.')
+                    await bot.send_message(chat_id=-1001749789551, text=bb.text)
+                await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
                 await b.reply('/fs')
                 await asyncio.sleep(0.5)
                 async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-                    await bot.send_message(chat_id=-1001541636745, text=bbb.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
+                    await bot.send_message(chat_id=-1001749789551, text=bbb.text)
+                await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
                 await asyncio.sleep(1)
-                await message.edit('✅ First Process Comleted.\n⏳ Running second process...')
+                await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
             except: # Trying to find a file less then 2 GB and greator then 1.5 GB.
                 ko = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
                 c = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ko)
                 await c.edit(c.document.file_name)
                 size = round(((c.document.file_size)/1024)/1024)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)')
+                await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
                 await c.reply('/dd')
                 await asyncio.sleep(1.5)
                 async for cc in bot.get_chat_history("@HagadmansaBot", 1):
-                    await bot.send_message(chat_id=-1001541636745, text=cc.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.')
+                    await bot.send_message(chat_id=-1001749789551, text=cc.text)
+                await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
                 await c.reply('/fs')
                 await asyncio.sleep(0.5)
                 async for ccc in bot.get_chat_history("@HagadmansaBot", 1):
-                    await bot.send_message(chat_id=-1001541636745, text=ccc.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
+                    await bot.send_message(chat_id=-1001749789551, text=ccc.text)
+                await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
                 await asyncio.sleep(1)
-                await message.edit('✅ First Process Comleted.\n⏳ Running second process...')
+                await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
             
     kk = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
     d = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=kk)
     await d.edit(d.document.file_name)
     size = round(((d.document.file_size)/1024)/1024)
-    await message.edit(f'✅ First Process Comleted.\n⏳ Running second process...\n- File Found. ({size} MB)')
+    await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)')
     await d.reply('/dd')
     await asyncio.sleep(1.5)
     async for dd in bot.get_chat_history("@HagadmansaBot", 1):
-        await bot.send_message(chat_id=-1001541636745, text=dd.text)
-    await message.edit(f'✅ First Process Comleted.\n⏳ Running second process...\n- File Found. ({size} MB)\n- File Stream link generated.')
+        await bot.send_message(chat_id=-1001749789551, text=dd.text)
+    await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
     await d.reply('/fs')
     await asyncio.sleep(0.5)
     async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
-        await bot.send_message(chat_id=-1001541636745, text=ddd.text)
-    await message.edit(f'✅ First Process Comleted.\n⏳ Running second process...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
+        await bot.send_message(chat_id=-1001749789551, text=ddd.text)
+    await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
     await asyncio.sleep(1)
-    await message.edit('Successfully completed all process.')
+    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n⏳ Running Third Step...')
+
+    # Reqesting @HagadmansaBot to upload it on link.hagadmansa.com
+    await bot.send_message(chat_id=-1001749789551, text=f'/xnwiz {query}')
+    await asyncio.sleep(4)
+    async for piku in bot.get_chat_history(-1001749789551, 1):
+        web = piku.text
+    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n⏳ Running Third Step...\nUploaded On Website.')
+    await asyncio.sleep(1)
+    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n✅ Third Step Completed.\n⏳ Running Fourth Step...')
+    await bot.send_message(chat_id=-1001749789551, text=f'/imdb {query}')
+    await asyncio.sleep(3)
+    async for motu in bot.get_chat_history(-1001749789551, 1):
+        msg = f'https://t.me/{message.chat.id}/{motu.id}'
+    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n✅ Third Step Completed.\n⏳ Running Fourth Step...\n- Notified On Telegram.')
+    await asyncio.sleep(0.5)
+    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n✅ Third Step Completed.\n✅ Fourth Step Completed.\n\nCollecting links.')
+    await asyncio.sleep(0.5)
+    await message.edit(f'**Website Link:** {web}\n**Telegram Link:** {msg}')
+    
        
 @bot.on_message(filters.me & filters.command(["eval", "e"], [".", "!", "/"]))
 async def eval(bot, message):
