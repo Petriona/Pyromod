@@ -150,12 +150,12 @@ async def movie_ul(bot, message):
             await asyncio.sleep(1)
             async for aa in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001541636745, text=aa.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.')
+            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.')
             await a.reply('/fs')
             await asyncio.sleep(0.5)
             async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001541636745, text=aaa.text)
-                await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
+            await message.edit(f'⏳ Running first process...\n- File Found. ({size} MB)\n- File Stream link generated.\n File Store Link generated.')
             await asyncio.sleep(1)
             await message.edit('✅ First Process Comleted.')
         except:
