@@ -146,23 +146,44 @@ async def movie_ul(bot, message):
             await a.reply('/dd')
             await asyncio.sleep(2)
             async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-                print(aa)
+                print(aa.text)
             await a.reply('/fs')
             await asyncio.sleep(2)
             async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-                print(aaa)
+                print(aaa.text)
         except:
+            ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<536870912])][0]
+            b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
+            await b.reply('/dd')
+            await asyncio.sleep(2)
+            async for bb in bot.get_chat_history("@HagadmansaBot", 1):
+                print(bb.text)
+            await b.reply('/fs')
+            await asyncio.sleep(2)
+            async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
+                print(bbb.text)
+        else:
+            ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1610612736])][0]
+            b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
+            await b.reply('/dd')
+            await asyncio.sleep(2)
+            async for bb in bot.get_chat_history("@HagadmansaBot", 1):
+                print(bb.text)
+            await b.reply('/fs')
+            await asyncio.sleep(2)
+            async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
+                print(bbb.text)
+        finally:
             ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
             b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
             await b.reply('/dd')
             await asyncio.sleep(2)
             async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-                print(bb)
-            await b.reply('/dd')
+                print(bb.text)
+            await b.reply('/fs')
             await asyncio.sleep(2)
             async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-                print(bbb)
-            
+                print(bbb.text)
 @bot.on_message(filters.me & filters.command(["eval"], [".", "!", "/"]))
 async def eval(bot, message):
       
