@@ -211,25 +211,17 @@ async def movie_ul(bot, message):
     async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
         await bot.send_message(chat_id=-1001749789551, text=ddd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
-    await asyncio.sleep(1)
-    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n⏳ Running Third Step...')
+    await asyncio.sleep(0.5)
+    await message.edit(f'✅ First Step Completed.\n✅ First Step Completed.\n\n- Uploading on Website...')
 
     # Reqesting @HagadmansaBot to upload it on link.hagadmansa.com
     await bot.send_message(chat_id=-1001749789551, text=f'/xnwiz {query}')
     await asyncio.sleep(4)
     async for piku in bot.get_chat_history(-1001749789551, 1):
         web = piku.text
-    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n⏳ Running Third Step...\nUploaded On Website.')
-    await asyncio.sleep(1)
-    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n✅ Third Step Completed.\n⏳ Running Fourth Step...')
+    await message.edit(f'✅ First Step Completed.\n✅ First Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
     await bot.send_message(chat_id=-1001749789551, text=f'/imdb {query}')
     await asyncio.sleep(3)
-    async for motu in bot.get_chat_history(-1001749789551, 1):
-        msg = f'https://t.me/{message.chat.id}/{motu.id}'
-    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n✅ Third Step Completed.\n⏳ Running Fourth Step...\n- Notified On Telegram.')
-    await asyncio.sleep(0.5)
-    await message.edit('✅ First Step Completed.\n✅ Second Step Completed./n✅ Third Step Completed.\n✅ Fourth Step Completed.\n\nCollecting links.')
-    await asyncio.sleep(0.5)
     await message.edit(f'**Website Link:** {web}\n**Telegram Link:** {msg}')
     
        
