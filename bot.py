@@ -39,7 +39,7 @@ async def start(bot, message):
  await message.delete()
  await message.reply(b.text)
       
-@bot.on_message(filters.me & filters.command(["movie", "m"], [".", "!", "/"]))
+@bot.on_message(filters.me & filters.command(["movie", "m"], [".", "!", "/"]) & filers.user([1250003833, 5040662195]))
 async def movie(bot, message):
       
      if len(message.command) == 1:
@@ -116,13 +116,13 @@ async def movie(bot, message):
             
      # await message.edit('Done, published on website.')
 
-@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]))
+@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]) & filers.user([1250003833, 5040662195]))
 async def movie_ul(bot, message):
  
     if len(message.command) == 1:
          return await message.edit('Give me movie name to search.')
 
-    await message.edit('⏳ Running first process...')
+    await message.edit('Starting process...')
             
     q = message.command[1:]
     query = listToString(q)
