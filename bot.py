@@ -194,15 +194,15 @@ async def movie_ul(bot, message):
         await bot.send_message(chat_id=-1001749789551, text=ddd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
     await asyncio.sleep(0.5)
-    await message.edit(f'✅ First Step Completed.\n✅ First Step Completed.\n\n- Uploading on Website...')
+    await message.edit(f'✅ First Step Completed.\n✅ Second Step Completed.\n\n- Uploading on Website...')
 
     # Reqesting @HagadmansaBot to upload it on link.hagadmansa.com
     await bot.send_message(chat_id=-1001749789551, text=f'/xnwiz {query}')
     await asyncio.sleep(4)
     async for piku in bot.get_chat_history(-1001749789551, 1):
         web = piku.text
-    await message.edit(f'✅ First Step Completed.\n✅ First Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
-    await bot.send_message(chat_id=-1001749789551, text=f'/imdb {query}')
+    await message.edit(f'✅ First Step Completed.\n✅ Second Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
+    await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
     await asyncio.sleep(3)
     await message.edit(f'**Movie:** {query}\n**Website Link:** {web}')
     
