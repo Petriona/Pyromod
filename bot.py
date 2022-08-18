@@ -121,6 +121,8 @@ async def movie_ul(bot, message):
  
     if len(message.command) == 1:
          return await message.edit('Give me movie name to search.')
+
+    await message.edit('Just Wait A minute brother')
             
     q = message.command[1:]
     query = listToString(q)
@@ -140,7 +142,7 @@ async def movie_ul(bot, message):
     else:
         try:
             ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1073741824])][0]
-            a = await bot.send_cached_media(chat_id='@HagadmabsaBot', file_id=ok)
+            a = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
             await a.reply('/dd')
             await asyncio.sleep(2)
             async for aa in bot.get_chat_history("@HagadmansaBot", 1):
@@ -151,7 +153,7 @@ async def movie_ul(bot, message):
                 print(aaa)
         except:
             ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
-            b = await bot.send_cached_media(chat_id='@HagadmabsaBot', file_id=ok)
+            b = await bot.send_cached_media(chat_id='@HagadmansaBot', file_id=ok)
             await b.reply('/dd')
             await asyncio.sleep(2)
             async for bb in bot.get_chat_history("@HagadmansaBot", 1):
