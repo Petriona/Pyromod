@@ -116,7 +116,7 @@ async def movie(bot, message):
             
      # await message.edit('Done, published on website.')
 
-@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]) & filters.user([1250003833, 5040662195]))
+@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]))
 async def movie_ul(bot, message):
  
     if len(message.command) == 1:
