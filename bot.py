@@ -152,7 +152,7 @@ async def movie_ul(bot, message):
                 await bot.send_message(chat_id=-1001749789551, text=aa.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
             await a.reply('/fs')
-            await asyncio.sleep(1)
+            await asyncio.sleep(1.25)
             async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
                 await bot.send_message(chat_id=-1001749789551, text=aaa.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
@@ -171,7 +171,7 @@ async def movie_ul(bot, message):
                   await bot.send_message(chat_id=-1001749789551, text=bb.text)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
               await b.reply('/fs')
-              await asyncio.sleep(1)
+              await asyncio.sleep(1.25)
               async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
                   await bot.send_message(chat_id=-1001749789551, text=bbb.text)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
@@ -189,7 +189,7 @@ async def movie_ul(bot, message):
         await bot.send_message(chat_id=-1001749789551, text=dd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
     await d.reply('/fs')
-    await asyncio.sleep(1)
+    await asyncio.sleep(1.25)
     async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
         await bot.send_message(chat_id=-1001749789551, text=ddd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
@@ -198,7 +198,7 @@ async def movie_ul(bot, message):
 
     # Reqesting @HagadmansaBot to upload it on link.hagadmansa.com
     await bot.send_message(chat_id=-1001749789551, text=f'/xnwiz {query}')
-    await asyncio.sleep(5)
+    await asyncio.sleep(5.5)
     async for piku in bot.get_chat_history(-1001749789551, 1):
         web = piku.text
     await message.edit(f'✅ First Step Completed.\n✅ Second Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
