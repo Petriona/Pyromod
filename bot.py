@@ -184,7 +184,7 @@ async def movie_ul(bot, message):
     size = round(((d.document.file_size)/1024)/1024)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)')
     await d.reply('/dd')
-    await asyncio.sleep(2(
+    await asyncio.sleep(2)
     async for dd in bot.get_chat_history("@HagadmansaBot", 1):
         await bot.send_message(chat_id=-1001749789551, text=dd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
