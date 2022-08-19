@@ -122,7 +122,7 @@ async def movie_ul(bot, message):
     if len(message.command) == 1:
          return await message.edit('Give me movie name to search.')
 
-    await message.edit('Starting process...')
+    await message.edit('Searching For Files...')
             
     q = message.command[1:]
     query = listToString(q)
@@ -138,7 +138,7 @@ async def movie_ul(bot, message):
 
     # Quitting process if not find any files.
     if not data:
-        return await message.edit(f'No Files Found named `{query}`.')
+        return await message.edit(f'No Files Found for `{query}`.')
     else:
         try: # trying to find a file less then 1 GB.
             ok = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<1073741824])][0]
