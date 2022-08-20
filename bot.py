@@ -23,12 +23,11 @@ def listToString(s):
     str1 = " "
     return (str1.join(s))
 
-@bot.on_message(filters.me & filters.command(["start"], [".", "!", "/"]))
-async def start(bot, message):
-  
- await message.edit('Hello')
+@bot.on_message(filters.me & filters.command(["a", "alive"], [".", "!", "/"]))
+async def alive(bot, message):
+  await message.edit("Hey, I'm Alive.")
       
-@bot.on_message(filters.me & filters.document & filters.chat(-1001749789551))
+"""@bot.on_message(filters.me & filters.document & filters.chat(-1001749789551))
 async def start(bot, message):
   
  a = await bot.copy_message("HagadmansaBot", message.chat.id, message.id)
@@ -37,9 +36,9 @@ async def start(bot, message):
  async for b in bot.get_chat_history("HagadmansaBot", 1):
       print(b.text)
  await message.delete()
- await message.reply(b.text)
+ await message.reply(b.text)"""
       
-@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]) & filters.user([1250003833, 5040662195]))
+"""@bot.on_message(filters.me & filters.command(["k"], [".", "!", "/"]) & filters.user([1250003833, 5040662195]))
 async def movie(bot, message):
       
      if len(message.command) == 1:
@@ -112,12 +111,12 @@ async def movie(bot, message):
           async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
             await message.edit('⏳ Running first process...\n- File Found. (1.5 GB to 2 GB)\n- File Stream link generated.\n- File Store link generated.')
           await asyncio.sleep(1)
-          await message.edit('✅ First Process Comleted.')
+          await message.edit('✅ First Process Comleted.')"""
             
      # await message.edit('Done, published on website.')
 
 @bot.on_message(filters.me & filters.command(["m", "movie"], [".", "!", "/"]))
-async def movie_ul(bot, message):
+async def movie(bot, message):
  
     if len(message.command) == 1:
          return await message.edit('Give me movie name to search.')
@@ -185,7 +184,7 @@ async def movie_ul(bot, message):
     await asyncio.sleep(0.5)
     await message.edit(f'{mo} First Step Completed.\n{mo} First Step Completed.\n\n- Uploading On Website...')
     await bot.send_message(chat_id="@HagadmansaBot", text=f'/xnwiz {query}')
-        await asyncio.sleep(5.5)
+    await asyncio.sleep(5.5)
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
