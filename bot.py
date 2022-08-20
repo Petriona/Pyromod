@@ -126,6 +126,7 @@ async def movie(bot, message):
     q = message.command[1:]
     query = listToString(q)
     mo = "✅"
+    print(q)
     
     data = []
     tata = []
@@ -184,13 +185,20 @@ async def movie(bot, message):
     await asyncio.sleep(0.25)
     await message.edit(f'{mo} First Step Completed.\n{mo} First Step Completed.\n\n- Uploading On Website...')
     await bot.send_message(chat_id="@HagadmansaBot", text=f'/xnwiz {query}')
-    await asyncio.sleep(4)
+    await asyncio.sleep(5)
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
-    await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
+    await bot.send_message(chat_id="@HagadmansaBot", text=f'/imdb {query}')
     await asyncio.sleep(3)
-    await message.edit(f'**Movie:** {query}\n**Website Link:** {web}')
+    kaka = q[:len(q)-1]
+    print(listToString(kaka))
+    async for piku in bot.get_chat_history("@HagadmansaBot", 1):
+        chomu = piku.caption
+    if kaka not in chomu.lower():
+        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n **Note:** @HagadmansaBot didn't send movie in channel.")
+    else: 
+        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web})
     
        
 @bot.on_message(filters.me & filters.command(["eval", "e"], [".", "!", "/"]))
