@@ -198,7 +198,7 @@ async def movie(bot, message):
     if kaka not in chomu.lower():
         return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n **Note:** @HagadmansaBot didn't send movie in channel.")
     else: 
-        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web})
+        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}")
     
        
 @bot.on_message(filters.me & filters.command(["eval", "e"], [".", "!", "/"]))
