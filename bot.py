@@ -150,9 +150,9 @@ async def movie(bot, message):
             await asyncio.sleep(1)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
             await a.reply('/fs')
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(0.25)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(0.25)
             await message.edit(f'{mo} First Step Completed.\n⏳ Running Second Step...')
         except:
             # Trying to find a file less then 1.5 GB and greator then 1 GB.
@@ -165,9 +165,9 @@ async def movie(bot, message):
               await asyncio.sleep(1)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
               await b.reply('/fs')
-              await asyncio.sleep(0.5)
+              await asyncio.sleep(0.25)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
-              await asyncio.sleep(0.5)
+              await asyncio.sleep(0.25)
               await message.edit(f'{mo} First Step Completed.\n⏳ Running Second Step...')
             
     kk = [x['file_id'] for x in tata if x['file_size']==max([v['file_size'] for v in tata if v['file_size']<2147483648])][0]
@@ -179,12 +179,12 @@ async def movie(bot, message):
     await asyncio.sleep(1)
     await message.edit(f'{mo} First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
     await d.reply('/fs')
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.25)
     await message.edit(f'{mo} First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.25)
     await message.edit(f'{mo} First Step Completed.\n{mo} First Step Completed.\n\n- Uploading On Website...')
     await bot.send_message(chat_id="@HagadmansaBot", text=f'/xnwiz {query}')
-    await asyncio.sleep(5.5)
+    await asyncio.sleep(4)
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
