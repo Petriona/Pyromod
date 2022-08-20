@@ -189,17 +189,17 @@ async def movie(bot, message):
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
-    await bot.send_message(chat_id="@HagadmansaBot", text=f'/imdb {query}')
+    await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
     await asyncio.sleep(3)
-    kaka = q[:len(q)-1]
-    print(listToString(kaka))
-    async for piku in bot.get_chat_history("@HagadmansaBot", 1):
+    pola = listToString(q[:len(q)-1])
+    print(pola)
+    async for piku in bot.get_chat_history(-1001594758751, 1):
         chomu = piku.caption
     print(chomu)
-    if kaka not in chomu:
-        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n **Note:** @HagadmansaBot didn't send movie in channel.")
-    else: 
+    if pola in chomu:
         return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}")
+    else: 
+        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n **Note:** @HagadmansaBot didn't send movie in channel.")
     
        
 @bot.on_message(filters.me & filters.command(["eval", "e"], [".", "!", "/"]))
