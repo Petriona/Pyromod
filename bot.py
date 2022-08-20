@@ -199,7 +199,7 @@ async def movie_ul(bot, message):
     # Reqesting @HagadmansaBot to upload it on link.hagadmansa.com
     await bot.send_message(chat_id="@HagadmansaBot", text=f'/xnwiz {query}')
     await asyncio.sleep(5.5)
-    async for piku in bot.get_chat_history("@HagadmandaBot", 1):
+    async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'✅ First Step Completed.\n✅ Second Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
     #await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
