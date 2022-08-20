@@ -147,14 +147,14 @@ async def movie_ul(bot, message):
             size = round(((a.document.file_size)/1024)/1024)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
             await a.reply('/dd')
-            await asyncio.sleep(2)
-            async for aa in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001749789551, text=aa.text)
+            await asyncio.sleep(1)
+            #async for aa in bot.get_chat_history("@HagadmansaBot", 1):
+                #await bot.send_message(chat_id=-1001749789551, text=aa.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
             await a.reply('/fs')
-            await asyncio.sleep(1.25)
-            async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
-                await bot.send_message(chat_id=-1001749789551, text=aaa.text)
+            await asyncio.sleep(1)
+            #async for aaa in bot.get_chat_history("@HagadmansaBot", 1):
+                #await bot.send_message(chat_id=-1001749789551, text=aaa.text)
             await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
             await asyncio.sleep(1)
             await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
@@ -166,14 +166,14 @@ async def movie_ul(bot, message):
               size = round(((b.document.file_size)/1024)/1024)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)')
               await b.reply('/dd')
-              await asyncio.sleep(2)
-              async for bb in bot.get_chat_history("@HagadmansaBot", 1):
-                  await bot.send_message(chat_id=-1001749789551, text=bb.text)
+              await asyncio.sleep(1)
+              #async for bb in bot.get_chat_history("@HagadmansaBot", 1):
+                  #await bot.send_message(chat_id=-1001749789551, text=bb.text)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
               await b.reply('/fs')
-              await asyncio.sleep(1.25)
-              async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
-                  await bot.send_message(chat_id=-1001749789551, text=bbb.text)
+              await asyncio.sleep(1)
+              #async for bbb in bot.get_chat_history("@HagadmansaBot", 1):
+                  #await bot.send_message(chat_id=-1001749789551, text=bbb.text)
               await message.edit(f'⏳ Running First Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
               await asyncio.sleep(0.5)
               await message.edit('✅ First Step Completed.\n⏳ Running Second Step...')
@@ -184,25 +184,25 @@ async def movie_ul(bot, message):
     size = round(((d.document.file_size)/1024)/1024)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)')
     await d.reply('/dd')
-    await asyncio.sleep(2)
-    async for dd in bot.get_chat_history("@HagadmansaBot", 1):
-        await bot.send_message(chat_id=-1001749789551, text=dd.text)
+    await asyncio.sleep(1)
+    #async for dd in bot.get_chat_history("@HagadmansaBot", 1):
+        #await bot.send_message(chat_id=-1001749789551, text=dd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.')
     await d.reply('/fs')
-    await asyncio.sleep(1.25)
-    async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
-        await bot.send_message(chat_id=-1001749789551, text=ddd.text)
+    await asyncio.sleep(1)
+    #async for ddd in bot.get_chat_history("@HagadmansaBot", 1):
+        #await bot.send_message(chat_id=-1001749789551, text=ddd.text)
     await message.edit(f'✅ First Step Completed.\n⏳ Running Second Step...\n- File Found. ({size} MB)\n- File Stream link generated.\n- File Store Link generated.')
     await asyncio.sleep(0.5)
     await message.edit(f'✅ First Step Completed.\n✅ Second Step Completed.\n\n- Uploading on Website...')
 
     # Reqesting @HagadmansaBot to upload it on link.hagadmansa.com
-    await bot.send_message(chat_id=-1001749789551, text=f'/xnwiz {query}')
+    await bot.send_message(chat_id="@HagadmansaBot", text=f'/xnwiz {query}')
     await asyncio.sleep(5.5)
-    async for piku in bot.get_chat_history(-1001749789551, 1):
+    async for piku in bot.get_chat_history("@HagadmandaBot", 1):
         web = piku.text
     await message.edit(f'✅ First Step Completed.\n✅ Second Step Completed.\n✅ Uploaded on Website\n\n - Notifying on Telegram...')
-    await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
+    #await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
     await asyncio.sleep(3)
     await message.edit(f'**Movie:** {query}\n**Website Link:** {web}')
     
