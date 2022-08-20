@@ -126,7 +126,6 @@ async def movie(bot, message):
     q = message.command[1:]
     query = listToString(q)
     mo = "✅"
-    print(q)
     
     data = []
     tata = []
@@ -194,14 +193,12 @@ async def movie(bot, message):
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     pola = listToString(q[:len(q)-1])
-    print(pola)
     async for piku in bot.get_chat_history(-1001594758751, 1):
         chomu = piku.caption
-    print(chomu)
     if pola in chomu:
         return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}")
     else: 
-        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n **Note:** @HagadmansaBot didn't send movie in channel.")
+        return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n**Note:** @HagadmansaBot didn't send movie in channel.")
     
        
 @bot.on_message(filters.me & filters.command(["eval", "e"], [".", "!", "/"]))
