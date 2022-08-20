@@ -188,7 +188,7 @@ async def movie(bot, message):
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
-    #await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
+    await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
     await asyncio.sleep(3)
     await message.edit(f'**Movie:** {query}\n**Website Link:** {web}')
     
