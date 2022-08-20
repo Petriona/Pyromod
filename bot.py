@@ -185,12 +185,14 @@ async def movie(bot, message):
     await asyncio.sleep(0.25)
     await message.edit(f'{mo} First Step Completed.\n{mo} First Step Completed.\n\n- Uploading On Website...')
     await bot.send_message(chat_id="@HagadmansaBot", text=f'/xnwiz {query}')
-    await asyncio.sleep(5)
+    await asyncio.sleep(2)
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
     await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
     await asyncio.sleep(3)
+    async for piku in bot.get_chat_history("@HagadmansaBot", 1):
+        web = piku.text
     pola = listToString(q[:len(q)-1])
     print(pola)
     async for piku in bot.get_chat_history(-1001594758751, 1):
