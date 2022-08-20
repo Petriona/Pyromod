@@ -189,12 +189,12 @@ async def movie(bot, message):
         web = piku.text
     await message.edit(f'{mo} First Step Completed.\n{mo} Second Step Completed.\n{mo} Uploaded On Website.\n\n- Notifying On Telegram...')
     await bot.send_message(chat_id=-1001594758751, text=f'/imdb {query}')
-    await asyncio.sleep(3)
+    await asyncio.sleep(4)
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         web = piku.text
     pola = listToString(q[:len(q)-1])
-    async for piku in bot.get_chat_history(-1001594758751, 1):
-        chomu = piku.caption
+    async for monu in bot.get_chat_history(-1001594758751, 1):
+        chomu = monu.caption
     if pola in chomu:
         return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}")
     else: 
