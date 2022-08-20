@@ -195,7 +195,8 @@ async def movie(bot, message):
     print(listToString(kaka))
     async for piku in bot.get_chat_history("@HagadmansaBot", 1):
         chomu = piku.caption
-    if kaka not in chomu.lower():
+    print(chomu)
+    if kaka not in chomu:
         return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}\n\n **Note:** @HagadmansaBot didn't send movie in channel.")
     else: 
         return await message.edit(f"**Movie:** {query}\n**Website Link:** {web}")
